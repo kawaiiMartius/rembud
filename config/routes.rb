@@ -1,5 +1,9 @@
 Rembud::Application.routes.draw do
   
+  resources :materials
+  resources :suppliers
+  resources :vehicles
+  
   resources :documents
 
   resources :tasks

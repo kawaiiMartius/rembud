@@ -8,7 +8,7 @@
   <div class="control-group">
     <%= f.label :started_at, :class => 'control-label' %>
     <div class="controls">
-      <%= f.date_select :started_at, :class => 'date_select' %>
+      <%= f.date_select :started_at, discard_day: true, :class => 'date_select' %>
     </div>
   </div>
   <div class="control-group">

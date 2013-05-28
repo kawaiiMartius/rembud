@@ -1,5 +1,3 @@
-class Material < ActiveRecord::Base
+class Material < Resoursable::Resoursable
   attr_accessible :measurement
-  
-  has_one :resource, as: :resoursable
 end

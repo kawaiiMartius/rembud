@@ -1,5 +1,3 @@
-class Supplier < ActiveRecord::Base
+class Supplier < Resoursable::Resoursable
   attr_accessible :qualification
-  
-  has_one :resource, as: :resoursable
 end

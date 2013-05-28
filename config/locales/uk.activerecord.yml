@@ -1,4 +1,8 @@
 uk:
+  attributes:
+    created_at: "Створено"
+    updated_at: "Оновлено"
+  
   activerecord:
     notices:
       updated: "Інформація про %{model} успішно змінена."
@@ -46,7 +50,6 @@ uk:
         other: "Машини"
         
     attributes:
-      created_at: "Створено"
       client:
         name: "Назва"
         phone: "Тел."
