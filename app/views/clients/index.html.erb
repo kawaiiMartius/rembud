@@ -22,7 +22,7 @@
         <td><%= client.phone %></td>
         <td><%= truncate client.details, length: 15 %></td>
         <td>
-          <%= link_to t(Order.model_name.human, count: 10),
+          <%= link_to Order.model_name.human(count: 1.1),
                       client_orders_path(client), class: 'btn btn-mini' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_client_path(client), :class => 'btn btn-mini' %>
