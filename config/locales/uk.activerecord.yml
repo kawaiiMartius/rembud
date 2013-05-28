@@ -1,0 +1,62 @@
+uk:
+  activerecord:
+    notices:
+      updated: "Інформація про %{model} успішно змінена."
+      created: "Інформація про %{model} успішно збережена."
+    models:
+      client:
+        one: "Замовник"
+        few: "Замовника"
+        many: "Замовників"
+        other: "Замовники"
+      document:
+        one: "Документ"
+        few: "Документа"
+        many: "Документів"
+        other: "Документи"
+      material:
+        one: "Матеріал"
+        few: "Матеріали"
+        many: "Матеріалів"
+        other: "Матеріали"
+      order:
+        one: "Замовлення"
+        few: "Замовлення"
+        many: "Замовлень"
+        other: "Замовлення"
+      resource:
+        one: "Ресурс"
+        few: "Ресурси"
+        many: "Ресурсів"
+        other: "Ресурси"
+      supplier:
+        one: "Робітник"
+        few: "Робітники"
+        many: "Робітників"
+        other: "Робітники"
+      task:
+        one: "Робота"
+        few: "Роботи"
+        many: "Робіт"
+        other: "Роботи"
+      vehicle:
+        one: "Машина"
+        few: "Машини"
+        many: "Машин"
+        other: "Машини"
+        
+    attributes:
+      created_at: "Створено"
+      client:
+        name: "Назва"
+        phone: "Тел."
+        details: "Реквізити"
+      order:
+        stage: "Етап"
+        started_at: "Дата початку"
+      task:
+        name: "Назва"
+        price: "Ціна за од."
+        execution_time: "Час виконання"
+        priority: "Пріоритет"
+        measurement: "Одиниця виміру"

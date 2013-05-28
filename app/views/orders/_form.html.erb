@@ -1,0 +1,26 @@
+<%= form_for [@client, @order], :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :client_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :client_id, Client.all, :id, :name, class: 'select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :started_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :started_at, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :stage, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :stage, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                client_orders_path(@client), :class => 'btn' %>
+  </div>
+<% end %>
