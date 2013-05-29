@@ -18,7 +18,7 @@
         <td><%= link_to material.id, material_path(material) %></td>
         <td><%= material.resource.name %></td>
         <td><%= material.measurement %></td>
-        <td><%=l material.created_at %></td>
+        <td><%=time_ago_human material.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_material_path(material), :class => 'btn btn-mini' %>

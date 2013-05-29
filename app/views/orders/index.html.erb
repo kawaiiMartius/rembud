@@ -21,7 +21,7 @@
         <td><%= link_to order.id, client_order_path(@client, order) %></td>
         <td><%=l order.started_at %></td>
         <td><%= order.stage %></td>
-        <td><%=t 'time.ago', time: time_ago_in_words(order.created_at) %></td>
+        <td><%=time_ago_human order.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_client_order_path(@client, order), :class => 'btn btn-mini' %>

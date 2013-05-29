@@ -14,7 +14,7 @@
     <% @vehicles.each do |vehicle| %>
       <tr>
         <td><%= link_to vehicle.id, vehicle_path(vehicle) %></td>
-        <td><%=l vehicle.created_at %></td>
+        <td><%=time_ago_human vehicle.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_vehicle_path(vehicle), :class => 'btn btn-mini' %>
