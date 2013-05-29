@@ -33,11 +33,9 @@ gem 'rails-i18n', '~> 0.6.1'
 # To use debugger
 # gem 'debugger'
 
+gem 'pg', '~> 0.14.1'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'railroady'
-end
-
-group :production do
-  gem 'pg', '~> 0.14.1'
 end

@@ -19,7 +19,8 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgres
-  host: localhost
-  username: user
-  database: HEROKU_POSTGRESQL_BLUE_URL
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
+  
