@@ -13,9 +13,3 @@
 # ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.acronym 'RESTful'
 # end
-
-ActiveSupport::Inflector.inflections do |inflect|
-  inflect.plural /^(о)$/i, 'а'
-  inflect.plural /^(а)$/i, 'и'
-  inflect.plural /^([йцкнгшщзхфвпрлджчсмтб])$/i, '\1а'
-end
