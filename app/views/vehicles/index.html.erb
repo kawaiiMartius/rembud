@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <%= render 'resoursable/index_thead' %>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -14,6 +15,7 @@
     <% @vehicles.each do |vehicle| %>
       <tr>
         <td><%= link_to vehicle.id, vehicle_path(vehicle) %></td>
+        <%= render partial: 'resoursable/index_tbody', object: vehicle %>
         <td><%=time_ago_human vehicle.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

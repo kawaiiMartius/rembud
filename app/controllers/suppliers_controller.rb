@@ -1,4 +1,6 @@
 class SuppliersController < ApplicationController
+  before_filter :find_supplier, only: [:show, :edit, :update, :destroy]
+  
   # GET /suppliers
   # GET /suppliers.json
   def index
@@ -13,8 +15,6 @@ class SuppliersController < ApplicationController
   # GET /suppliers/1
   # GET /suppliers/1.json
   def show
-    @supplier = Supplier.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @supplier }
@@ -25,6 +25,7 @@ class SuppliersController < ApplicationController
   # GET /suppliers/new.json
   def new
     @supplier = Supplier.new
+    @supplier.build_resource
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,7 +35,7 @@ class SuppliersController < ApplicationController
 
   # GET /suppliers/1/edit
   def edit
-    @supplier = Supplier.find(params[:id])
+    
   end
 
   # POST /suppliers
@@ -56,7 +57,6 @@ class SuppliersController < ApplicationController
   # PUT /suppliers/1
   # PUT /suppliers/1.json
   def update
-    @supplier = Supplier.find(params[:id])
 
     respond_to do |format|
       if @supplier.update_attributes(params[:supplier])
@@ -72,12 +72,18 @@ class SuppliersController < ApplicationController
   # DELETE /suppliers/1
   # DELETE /suppliers/1.json
   def destroy
-    @supplier = Supplier.find(params[:id])
     @supplier.destroy
 
     respond_to do |format|
       format.html { redirect_to suppliers_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def find_supplier
+    @suplier = Supplier.find(params[:id])
+    @resource = @material.resource
   end
 end

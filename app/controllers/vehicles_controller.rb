@@ -1,4 +1,6 @@
 class VehiclesController < ApplicationController
+  before_filter :find_vehicle, only: [:show, :edit, :update, :destroy]
+  
   # GET /vehicles
   # GET /vehicles.json
   def index
@@ -13,8 +15,6 @@ class VehiclesController < ApplicationController
   # GET /vehicles/1
   # GET /vehicles/1.json
   def show
-    @vehicle = Vehicle.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @vehicle }
@@ -25,6 +25,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles/new.json
   def new
     @vehicle = Vehicle.new
+    @vehicle.build_resource
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,7 +35,7 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/1/edit
   def edit
-    @vehicle = Vehicle.find(params[:id])
+    
   end
 
   # POST /vehicles
@@ -56,8 +57,6 @@ class VehiclesController < ApplicationController
   # PUT /vehicles/1
   # PUT /vehicles/1.json
   def update
-    @vehicle = Vehicle.find(params[:id])
-
     respond_to do |format|
       if @vehicle.update_attributes(params[:vehicle])
         format.html { redirect_to @vehicle, notice: 'Vehicle was successfully updated.' }
@@ -72,12 +71,18 @@ class VehiclesController < ApplicationController
   # DELETE /vehicles/1
   # DELETE /vehicles/1.json
   def destroy
-    @vehicle = Vehicle.find(params[:id])
     @vehicle.destroy
 
     respond_to do |format|
       format.html { redirect_to vehicles_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def find_vehicle
+    @vehicle = Vehcile.find(params[:id])
+    @resource = @vehicle.resource
   end
 end
