@@ -5,6 +5,8 @@
       <%= f.number_field :qualification, :class => 'number_field' %>
     </div>
   </div>
+  
+  <%= render partial: 'resoursable/form', object: f %>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

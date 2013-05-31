@@ -1,0 +1,6 @@
+<dt><strong><%= Resource.human_attribute_name(:name) %>:</strong></dt>
+<dd><%= @resource.name %></dd>
+<dt><strong><%= Resource.human_attribute_name(:code) %>:</strong></dt>
+<dd><%= @resource.code %></dd>
+<dt><strong><%= Resource.human_attribute_name(:price) %>:</strong></dt>
+<dd><%= number_to_currency @resource.price %></dd>
