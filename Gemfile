@@ -10,7 +10,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer',  '0.11.1', platform: :ruby
   gem 'uglifier', '>= 1.0.3'
-  
 end
 
 gem "less-rails"
@@ -19,6 +18,8 @@ gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap
 gem 'jquery-rails', '~> 2.2.1'
 
 gem 'rails-i18n', '~> 0.6.1'
+
+gem 'simple_form', '~> 2.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -40,4 +41,10 @@ gem 'pg', '~> 0.14.1'
 group :development, :test do
   gem 'sqlite3'
   gem 'railroady'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
