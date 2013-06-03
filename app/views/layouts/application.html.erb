@@ -38,13 +38,17 @@
     
     <%= nav_bar fixed: :top, brand: "Rembud", responsive: true do %>
       <%= menu_group do %>
-        <%= menu_item Client.model_name.human(count:1.1), clients_path %>
+        <%= menu_item Client.model_name.human(count: 1.1), clients_path %>
+        <%= menu_item Task.model_name.human(count: 1.1), tasks_path %>
+        
+        <%= menu_divider %>
+        
         <%= menu_item Document.model_name.human(count:1.1), documents_path %>
       
-        <%= drop_down Resource.model_name.human(count:1.1) do %>
-          <%= menu_item Material.model_name.human(count:1.1), materials_path %>
-          <%= menu_item Supplier.model_name.human(count:1.1), suppliers_path %>
-          <%= menu_item Vehicle.model_name.human(count:1.1), vehicles_path %>
+        <%= drop_down Resource.model_name.human(count: 1.1) do %>
+          <%= menu_item Material.model_name.human(count: 1.1), materials_path %>
+          <%= menu_item Supplier.model_name.human(count: 1.1), suppliers_path %>
+          <%= menu_item Vehicle.model_name.human(count: 1.1), vehicles_path %>
         <% end %>
         
       <% end %>

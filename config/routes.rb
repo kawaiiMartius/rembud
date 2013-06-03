@@ -1,5 +1,14 @@
 Rembud::Application.routes.draw do
   
+  resources :order_tasks
+
+
+  resources :clients do
+    resources :orders do
+      resources :order_tasks
+    end
+  end
+  
   resources :materials
   resources :suppliers
   resources :vehicles
@@ -9,10 +18,6 @@ Rembud::Application.routes.draw do
   resources :tasks
   
   resources :resources
-
-  resources :clients do
-    resources :orders
-  end
 
   root to: 'clients#index'
 

@@ -3,4 +3,6 @@ class OrderTask < ActiveRecord::Base
   
   belongs_to :order
   belongs_to :task
+  
+  belongs_to :client
 end

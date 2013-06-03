@@ -54,9 +54,24 @@ uk:
         name: "Назва"
         phone: "Тел."
         details: "Реквізити"
+      document:
+        name: "Назва"
+        code: "Шифр"
+        template: "Розмітка"
+      material:
+        measurement: "Од. виміру"
       order:
         stage: "Етап"
         started_at: "Дата початку"
+      order_task:
+        amount: "Кількість"
+        task: "Робота"
+      resource:
+        name: "Назва"
+        code: "Шифр"
+        price: "Ціна за од."
+      supplier:
+        qualification: "Розряд"
       task:
         name: "Назва"
         price: "Ціна за од."

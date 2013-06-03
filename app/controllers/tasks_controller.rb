@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_filter :load_task, only: [:show, :edit, :update, :destroy]
+  
   # GET /tasks
   # GET /tasks.json
   def index
@@ -13,8 +15,6 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
-    @task = Task.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @task }
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
-    @task = Task.find(params[:id])
+    
   end
 
   # POST /tasks
@@ -56,8 +56,6 @@ class TasksController < ApplicationController
   # PUT /tasks/1
   # PUT /tasks/1.json
   def update
-    @task = Task.find(params[:id])
-
     respond_to do |format|
       if @task.update_attributes(params[:task])
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
@@ -72,12 +70,21 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
-    @task = Task.find(params[:id])
-    @task.destroy
+    if @order
+      @task.order_task.destroy
+    else
+      @task.destroy
+    end
 
     respond_to do |format|
       format.html { redirect_to tasks_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def load_task
+    @task = Task.find(params[:id])
   end
 end

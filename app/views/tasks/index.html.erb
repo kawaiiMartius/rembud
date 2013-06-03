@@ -1,6 +1,11 @@
 <%- model_class = Task -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human(count: 1.1) %></h1>
+  <h1>
+    <%=t '.title', :default => model_class.model_name.human(count: 1.1) %>
+    <%- if @order %>
+      <%= t :from, scope: :time %> <%= link_to @order.started_at, client_order_path(@client, @order) %>
+    <% end -%>
+  </h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -39,6 +44,10 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_task_path,
-            :class => 'btn btn-primary' %>
+<% if @order %>
+  <%= link_to t("helpers.links.new"), new_client_order_task_path, :class => 'btn btn-primary' %>
+<% else %>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_task_path,
+              :class => 'btn btn-primary' %>
+<% end %>

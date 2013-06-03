@@ -1,7 +1,7 @@
 <%- model_class = Order -%>
 <div class="page-header">
   <h1>
-    <%=t '.title', :default => model_class.model_name.human %>
+    <%=t '.title', :default => model_class.model_name.human(count: 1.1) %>
     <%= link_to @client.name, client_path(@client) %>
   </h1>
 </div>
@@ -23,6 +23,7 @@
         <td><%= order.stage %></td>
         <td><%=time_ago_human order.created_at %></td>
         <td>
+          <%= link_to Task.model_name.human(count: 1.1), client_order_order_tasks_path(order.client, order), class: 'btn btn-mini' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_client_order_path(@client, order), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

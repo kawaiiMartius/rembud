@@ -4,6 +4,8 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong><%= Client.model_name.human %>:</strong></dt>
+  <dd><%= link_to @order.client.name, @order.client %></dd>
   <dt><strong><%= model_class.human_attribute_name(:started_at) %>:</strong></dt>
   <dd><%= @order.started_at %></dd>
   <dt><strong><%= model_class.human_attribute_name(:stage) %>:</strong></dt>
