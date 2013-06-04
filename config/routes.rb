@@ -1,7 +1,4 @@
 Rembud::Application.routes.draw do
-  
-  resources :order_tasks
-
 
   resources :clients do
     resources :orders do
@@ -15,7 +12,9 @@ Rembud::Application.routes.draw do
   
   resources :documents
 
-  resources :tasks
+  resources :tasks do
+    resources :resource_in_tasks
+  end
   
   resources :resources
 

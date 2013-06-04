@@ -1,0 +1,12 @@
+<%= simple_form_for [@task, @resource_in_task] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :amount %>
+    <%= f.association :resource, label_method: :name %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
