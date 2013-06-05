@@ -10,6 +10,19 @@
   <dd><%= @order.started_at %></dd>
   <dt><strong><%= model_class.human_attribute_name(:stage) %>:</strong></dt>
   <dd><%= @order.stage %></dd>
+  
+  <% unless @order.order_tasks.empty? %>
+    <dt><strong><%= Task.model_name.human(count: 1.1) %>:</strong></dt>
+    <dd>
+      <ul>
+        <% @order.order_tasks.each do |order_task| %>
+          <li>
+            <%= link_to order_task.task.name, client_order_order_task_path(@client, @order, order_task) %>
+          </li>
+        <% end %>
+      </ul>
+    </dd>
+  <% end %>
 </dl>
 
 <div class="form-actions">

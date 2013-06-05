@@ -20,7 +20,7 @@
           <%= link_to order_task.order.started_at, client_order_path(@order.client.to_param, @order.to_param) %>
         </td>
         <td><%= link_to order_task.task.name, order_task.task %></td>
-        <td><%= order_task.amount %></td>
+        <td><%= order_task.amount %> (<%= order_task.task.measurement %>)</td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_client_order_order_task_path(order_task.order.client.to_param, order_task.order.to_param, order_task.to_param), :class => 'btn btn-mini' %>

@@ -28,6 +28,11 @@ uk:
         few: "Замовлення"
         many: "Замовлень"
         other: "Замовлення"
+      order_task:
+        one: "Робота у замовленні"
+        few: "Роботи у замовленні"
+        many: "Робіт у замовленні"
+        other: "Роботи у замовленні"
       resource:
         one: "Ресурс"
         few: "Ресурси"
@@ -64,7 +69,7 @@ uk:
         stage: "Етап"
         started_at: "Дата початку"
       order_task:
-        amount: "Кількість"
+        amount: "Обсяг"
         task: "Робота"
       resource:
         name: "Назва"
