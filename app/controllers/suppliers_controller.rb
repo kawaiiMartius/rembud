@@ -83,7 +83,7 @@ class SuppliersController < ApplicationController
   private
   
   def find_supplier
-    @suplier = Supplier.find(params[:id])
-    @resource = @material.resource
+    @supplier = Supplier.find(params[:id])
+    @resource = @supplier.resource
   end
 end
