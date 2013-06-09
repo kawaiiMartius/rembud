@@ -38,6 +38,11 @@ uk:
         few: "Ресурси"
         many: "Ресурсів"
         other: "Ресурси"
+      resource_in_task:
+        one: "Ресурс для роботи"
+        few: "Ресурса для роботи"
+        many: "Ресурсів для роботи"
+        other: "Ресурси для роботи"
       supplier:
         one: "Робітник"
         few: "Робітники"
@@ -68,6 +73,7 @@ uk:
       order:
         stage: "Етап"
         started_at: "Дата початку"
+        cost: "Собівартість"
       order_task:
         amount: "Обсяг"
         task: "Робота"
@@ -75,6 +81,8 @@ uk:
         name: "Назва"
         code: "Шифр"
         price: "Ціна за од."
+      resource_in_task:
+        amount: "Кількість"
       supplier:
         qualification: "Розряд"
       task:
@@ -83,3 +91,4 @@ uk:
         execution_time: "Час виконання"
         priority: "Пріоритет"
         measurement: "Одиниця виміру"
+        cost: "Собівартість"

@@ -11,6 +11,9 @@
   <dt><strong><%= model_class.human_attribute_name(:stage) %>:</strong></dt>
   <dd><%= @order.stage %></dd>
   
+  <dt><strong><%= model_class.human_attribute_name(:cost) %>:</strong></dt>
+  <dd><%= number_to_currency @order.cost %></dd>
+  
   <% unless @order.order_tasks.empty? %>
     <dt><strong><%= Task.model_name.human(count: 1.1) %>:</strong></dt>
     <dd>

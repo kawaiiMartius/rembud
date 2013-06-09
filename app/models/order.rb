@@ -11,4 +11,12 @@ class Order < ActiveRecord::Base
   def to_s
     self.started_at
   end
+  
+  def cost
+    cost = 0
+    self.order_tasks.each do |task|
+      cost += task.task.cost * task.amount
+    end
+    cost
+  end
 end

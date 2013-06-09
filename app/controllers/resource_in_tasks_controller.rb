@@ -74,7 +74,7 @@ class ResourceInTasksController < ApplicationController
     @resource_in_task.destroy
 
     respond_to do |format|
-      format.html { redirect_to resource_in_tasks_url }
+      format.html { redirect_to task_resource_in_tasks_url }
       format.json { head :no_content }
     end
   end

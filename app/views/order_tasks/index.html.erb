@@ -15,7 +15,7 @@
   <tbody>
     <% @order_tasks.each do |order_task| %>
       <tr>
-        <td><%= link_to order_task.id, client_order_order_task_path(@client, @order, order_task) %></td>
+        <td><%= link_to order_task.order_task.id, client_order_order_task_path(@client, @order, order_task) %></td>
         <td>
           <%= link_to order_task.order.started_at, client_order_path(@order.client.to_param, @order.to_param) %>
         </td>

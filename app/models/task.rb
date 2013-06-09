@@ -10,4 +10,14 @@ class Task < ActiveRecord::Base
   has_many :resources, through: :resource_in_tasks
   
   accepts_nested_attributes_for :order_tasks
+  
+  default_scope order: :priority
+  
+  def cost
+    cost = 0
+    self.resource_in_tasks.each do |res|
+      cost += res.resource.price * res.amount
+    end
+    cost
+  end
 end

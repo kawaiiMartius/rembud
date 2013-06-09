@@ -16,7 +16,7 @@
       <th><%= model_class.human_attribute_name(:execution_time) %></th>
       <th><%= model_class.human_attribute_name(:priority) %></th>
       <th><%= model_class.human_attribute_name(:measurement) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:cost) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -25,12 +25,14 @@
       <tr>
         <td><%= link_to task.id, task_path(task) %></td>
         <td><%= task.name %></td>
-        <td><%= task.price %></td>
+        <td><%= number_to_currency task.price %></td>
         <td><%= task.execution_time %></td>
         <td><%= task.priority %></td>
         <td><%= task.measurement %></td>
-        <td><%=time_ago_human task.created_at %></td>
+        <td><%= number_to_currency task.cost %></td>
         <td>
+          <%= link_to ResourceInTask.model_name.human(count: 1.1), task_resource_in_tasks_path(task),
+                      class: 'btn btn-mini' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_task_path(task), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

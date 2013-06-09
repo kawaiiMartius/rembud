@@ -14,6 +14,16 @@
   <dd><%= @task.priority %></dd>
   <dt><strong><%= model_class.human_attribute_name(:measurement) %>:</strong></dt>
   <dd><%= @task.measurement %></dd>
+  
+  <dt><strong><%= model_class.human_attribute_name(:cost) %>:</strong></dt>
+  <dd><%= number_to_currency @task.cost %></dd>
+  
+  <dt><strong><%= ResourceInTask.model_name.human(count: 1.1) %>:</strong></dt>
+  <dd>
+    <% @task.resource_in_tasks.each do |res| %>
+      <%= link_to res.resource.name, task_resource_in_task_path(@task, res) %>
+    <% end %>
+  </dd>
 </dl>
 
 <div class="form-actions">
