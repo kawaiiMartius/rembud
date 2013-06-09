@@ -1,5 +1,4 @@
 class OrderTask < ActiveRecord::Base
-  before_save :take_task_priority
   attr_accessible :amount, :order_id, :task_id
   
   belongs_to :order

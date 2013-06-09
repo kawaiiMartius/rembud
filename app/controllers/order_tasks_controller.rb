@@ -45,7 +45,8 @@ class OrderTasksController < ApplicationController
 
     respond_to do |format|
       if @order_task.save
-        format.html { redirect_to [@client, @order, @order_task], notice: 'Order task was successfully created.' }
+        format.html { redirect_to [@client, @order, @order_task],
+                            notice: t(:created, model: OrderTask.model_name.human, scope: [:activerecord, :notices]) }
         format.json { render json: @order_task, status: :created, location: @order_task }
       else
         format.html { render action: "new" }
@@ -59,7 +60,8 @@ class OrderTasksController < ApplicationController
   def update
     respond_to do |format|
       if @order_task.update_attributes(params[:order_task])
-        format.html { redirect_to [@client, @order, @order_task], notice: 'Order task was successfully updated.' }
+        format.html { redirect_to [@client, @order, @order_task],
+                            notice: t(:updated, model: OrderTask.model_name.human, scope: [:activerecord, :notices]) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

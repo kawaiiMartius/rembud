@@ -45,7 +45,8 @@ class ResourceInTasksController < ApplicationController
 
     respond_to do |format|
       if @resource_in_task.save
-        format.html { redirect_to task_resource_in_task_url, notice: 'Resource in task was successfully created.' }
+        format.html { redirect_to task_resource_in_task_url,
+                            notice: t(:created, model: ResourceInTask.model_name.human, scope: [:activerecord, :notices])  }
         format.json { render json: @resource_in_task, status: :created, location: @resource_in_task }
       else
         format.html { render action: "new" }
@@ -59,7 +60,8 @@ class ResourceInTasksController < ApplicationController
   def update
     respond_to do |format|
       if @resource_in_task.update_attributes(params[:resource_in_task])
-        format.html { redirect_to task_resource_in_task_url, notice: 'Resource in task was successfully updated.' }
+        format.html { redirect_to task_resource_in_task_url,
+                            notice: t(:updated, model: ResourceInTask.model_name.human, scope: [:activerecord, :notices]) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
