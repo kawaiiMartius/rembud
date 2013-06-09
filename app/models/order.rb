@@ -6,7 +6,7 @@ class Order < ActiveRecord::Base
   has_and_belongs_to_many :documents
   
   has_many :order_tasks, dependent: :destroy
-  has_many :tasks, :through => :order_tasks
+  has_many :tasks, through: :order_tasks
   
   def to_s
     self.started_at

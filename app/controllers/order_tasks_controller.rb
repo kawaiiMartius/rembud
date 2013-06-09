@@ -5,7 +5,7 @@ class OrderTasksController < ApplicationController
   # GET /order_tasks
   # GET /order_tasks.json
   def index
-    @order_tasks = @order.tasks
+    @order_tasks = @order.order_tasks.sort_by_task
 
     respond_to do |format|
       format.html # index.html.erb

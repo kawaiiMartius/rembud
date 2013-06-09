@@ -16,9 +16,9 @@
   <%= link_to t('.back', :default => t("helpers.links.back")),
               client_order_order_tasks_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_client_order_order_task_path(@order_task), :class => 'btn' %>
+              edit_client_order_order_task_path, :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              client_order_order_task_path(@order_task),
+              client_order_order_task_path,
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
