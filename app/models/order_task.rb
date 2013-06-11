@@ -1,7 +1,7 @@
 class OrderTask < ActiveRecord::Base
   attr_accessible :amount, :order_id, :task_id, :is_complete
 
-  after_update :change_order_stage
+  after_save :change_order_stage
   
   belongs_to :order
   belongs_to :task

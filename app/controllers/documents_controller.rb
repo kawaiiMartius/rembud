@@ -62,7 +62,7 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       if @document.update_attributes(params[:document])
         format.html { redirect_to @document,
-                            notice: t(:updated, model: Task.model_name.human, scope: [:activerecord, :notices]) }
+                            notice: t(:updated, model: Document.model_name.human, scope: [:activerecord, :notices]) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
