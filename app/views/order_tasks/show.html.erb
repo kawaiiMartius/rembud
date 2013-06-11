@@ -10,6 +10,12 @@
   <dd><%= link_to @order_task.task.name, @order_task.task %></dd>
   <dt><strong><%= model_class.human_attribute_name(:amount) %>:</strong></dt>
   <dd><%= @order_task.amount %> (<%= @order_task.task.measurement %>)</dd>
+  
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= number_to_currency @order_task.price %></dd>
+  
+  <dt><strong><%= model_class.human_attribute_name(:cost) %>:</strong></dt>
+  <dd><%= number_to_currency @order_task.cost %></dd>
 </dl>
 
 <div class="form-actions">

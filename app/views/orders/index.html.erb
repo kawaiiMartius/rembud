@@ -13,6 +13,7 @@
       <th><%= model_class.human_attribute_name(:stage) %></th>
       <th><%= model_class.human_attribute_name(:updated_at) %></th>
       <th><%= model_class.human_attribute_name(:cost) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= order.stage %></td>
         <td><%=time_ago_human order.updated_at %></td>
         <td><%= number_to_currency order.cost %></td>
+        <td><%= number_to_currency order.price %></td>
         <td>
           <%= link_to Task.model_name.human(count: 1.1), client_order_order_tasks_path(order.client, order), class: 'btn btn-mini' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

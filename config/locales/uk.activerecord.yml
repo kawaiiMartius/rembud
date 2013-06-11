@@ -2,6 +2,8 @@ uk:
   attributes:
     created_at: "Створено"
     updated_at: "Оновлено"
+    cost: "Собівартість"
+    price: "Ціна"
 
   activerecord:
     notices:
@@ -73,7 +75,6 @@ uk:
       order:
         stage: "Етап"
         started_at: "Дата початку"
-        cost: "Собівартість"
       order_task:
         amount: "Обсяг"
         task: "Робота"
@@ -92,4 +93,3 @@ uk:
         execution_time: "Час виконання"
         priority: "Пріоритет"
         measurement: "Одиниця виміру"
-        cost: "Собівартість"

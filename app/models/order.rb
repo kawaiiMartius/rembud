@@ -12,11 +12,11 @@ class Order < ActiveRecord::Base
     self.started_at
   end
   
+  def price
+    self.order_tasks.inject(0) { |sum, order_task| sum + order_task.task.price * order_task.amount }
+  end
+  
   def cost
-    cost = 0
-    self.order_tasks.each do |task|
-      cost += task.task.cost * task.amount
-    end
-    cost
+    self.order_tasks.inject(0) { |sum, task| sum + task.task.cost * task.amount }
   end
 end

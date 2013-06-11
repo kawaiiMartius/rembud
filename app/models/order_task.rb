@@ -10,6 +10,14 @@ class OrderTask < ActiveRecord::Base
   
   scope :sort_by_task, includes(:task).order('tasks.priority')
   scope :incomplete, includes(:task).where('is_complete = ?', false).order('tasks.priority')
+  
+  def price
+    self.task.price * self.amount
+  end
+
+  def cost
+    self.task.cost * self.amount
+  end
 
   private
 
