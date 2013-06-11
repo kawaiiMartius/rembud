@@ -9,18 +9,24 @@
       <th><%= Order.model_name.human %></th>
       <th><%= Task.model_name.human %></th>
       <th><%= model_class.human_attribute_name(:amount) %></th>
+      <th><%= model_class.human_attribute_name(:is_complete) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @order_tasks.each do |order_task| %>
-      <tr>
+      <tr <%- if order_task.is_complete? -%>class="success"<%- end -%> >
         <td><%= link_to order_task.id, client_order_order_task_path(@client, @order, order_task) %></td>
         <td>
           <%= link_to order_task.order.started_at, client_order_path(@order.client.to_param, @order.to_param) %>
         </td>
         <td><%= link_to order_task.task.name, order_task.task %></td>
         <td><%= order_task.amount %> (<%= order_task.task.measurement %>)</td>
+        <td>
+          <%= form_for [@client, @order, order_task], remote: true do |f| %>
+            <%= f.check_box :is_complete %>
+          <% end %>
+        </td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_client_order_order_task_path(order_task.order.client.to_param, order_task.order.to_param, order_task.to_param), :class => 'btn btn-mini' %>

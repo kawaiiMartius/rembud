@@ -4,6 +4,7 @@
   <div class="form-inputs">
     <%= f.association :task, label_method: :name, prompt: t(:select_task, scope: [:messages, :prompts])  %>
     <%= f.input :amount %>
+    <%= f.input :is_complete %>
   </div>
 
   <div class="form-actions">

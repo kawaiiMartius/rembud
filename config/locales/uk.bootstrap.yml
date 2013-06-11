@@ -1,5 +1,6 @@
 uk:
   helpers:
+    completed: "Закінчено"
     actions: "Дії"
     links:
       back: "Назад"
