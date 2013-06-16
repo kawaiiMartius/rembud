@@ -6,6 +6,7 @@ describe "resource_in_tasks/index" do
       stub_model(ResourceInTask),
       stub_model(ResourceInTask)
     ])
+    assign(:)
   end
 
   it "renders a list of resource_in_tasks" do

@@ -1,5 +1,6 @@
 class Task < ActiveRecord::Base
   attr_accessible :execution_time, :measurement, :name, :price, :priority, :order_tasks_attributes
+  validates_presence_of :measurement, :name, :priority
   
   belongs_to :order
   

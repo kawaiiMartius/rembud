@@ -7,6 +7,8 @@ class OrderTask < ActiveRecord::Base
   belongs_to :task
   
   belongs_to :client
+
+  validates :amount, presence: true
   
   scope :sort_by_task, includes(:task).order('tasks.priority')
   scope :incomplete, includes(:task).where('is_complete = ?', false).order('tasks.priority')

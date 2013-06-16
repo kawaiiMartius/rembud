@@ -1,5 +1,6 @@
 class Resource < ActiveRecord::Base
   attr_accessible :code, :name, :price
+  validates_presence_of :name, :price
   
   belongs_to :resoursable, polymorphic: true
   
